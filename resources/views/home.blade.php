@@ -299,80 +299,32 @@
   <div class="max-w-6xl mx-auto text-center">
     <h2 class="text-3xl font-bold text-gray-900 mb-12">Apa Kata Klien Kami?</h2>
     <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
-      <!-- Ulasan 1 -->
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="text-gray-600 italic mb-4">“Printer saya awalnya rusak , setelah diperbaikin oleh teknisi blitz , sekarang kembali normal Terimakasih!”</p>
-        <div class="flex items-center justify-center space-x-3">
-          <img src="https://i.pravatar.cc/40?img=11" alt="Client" class="w-10 h-10 rounded-full">
-          <div class="text-left">
-            <p class="font-semibold text-gray-800">Riko Setiawan</p>
-            <p class="text-sm text-gray-500">Mahasiswa</p>
+      
+      <!-- ULASAN -->
+      @foreach ([
+        ['img' => 'indo1.png', 'nama' => 'Riko Setiawan', 'profesi' => 'Mahasiswa', 'ulasan' => 'Printer saya awalnya rusak , setelah diperbaiki oleh teknisi Blitz, sekarang kembali normal. Terima kasih!'],
+        ['img' => 'indo2.jpeg', 'nama' => 'Joko Anwar', 'profesi' => 'Guru SD', 'ulasan' => 'Teknisi Blitz Tech sangat profesional dan memberikan solusi terbaik untuk laptop saya yang lemot.'],
+        ['img' => 'indo3.jpeg', 'nama' => 'Galih Permana', 'profesi' => 'Fotografer', 'ulasan' => 'Saya kira data saya hilang, tapi Blitz Tech berhasil recovery semuanya. Terima kasih banyak!'],
+        ['img' => 'indo4.jpeg', 'nama' => 'Muhammad Ahmad', 'profesi' => 'Pegawai Bank', 'ulasan' => 'Sangat puas dengan hasil servisnya. Laptop saya kini tidak cepat panas lagi.'],
+        ['img' => 'indo5.jpg', 'nama' => 'Wahyu Nugroho', 'profesi' => 'Desainer Grafis', 'ulasan' => 'Blitz Tech selalu jadi andalan saya kalau laptop bermasalah. Servis cepat dan harga jujur.'],
+        ['img' => 'indo6.jpeg', 'nama' => 'Dian Ayu Lestari', 'profesi' => 'Owner Online Shop', 'ulasan' => 'Sudah dua kali servis di Blitz Tech, selalu puas dengan hasil dan pelayanannya. Highly recommended!'],
+      ] as $client)
+        <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
+          <p class="text-gray-600 italic mb-4">“{{ $client['ulasan'] }}”</p>
+          <div class="flex items-center space-x-4 mt-4">
+            <img src="{{ asset('images/clients/' . $client['img']) }}" class="w-12 h-12 rounded-full object-cover" alt="{{ $client['nama'] }}">
+            <div class="text-left">
+              <p class="font-semibold text-gray-800">{{ $client['nama'] }}</p>
+              <p class="text-sm text-gray-500">{{ $client['profesi'] }}</p>
+            </div>
           </div>
         </div>
-      </div>
+      @endforeach
 
-      <!-- Ulasan 2 -->
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="text-gray-600 italic mb-4">“Teknisi Blitz Tech sangat profesional dan memberikan solusi terbaik untuk laptop saya yang lemot.”</p>
-        <div class="flex items-center justify-center space-x-3">
-          <img src="https://i.pravatar.cc/40?img=12" alt="Client" class="w-10 h-10 rounded-full">
-          <div class="text-left">
-            <p class="font-semibold text-gray-800">Lia Marlina</p>
-            <p class="text-sm text-gray-500">Guru SD</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ulasan 3 -->
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="text-gray-600 italic mb-4">“Saya kira data saya hilang, tapi Blitz Tech berhasil recovery semuanya. Terima kasih banyak!”</p>
-        <div class="flex items-center justify-center space-x-3">
-          <img src="https://i.pravatar.cc/40?img=13" alt="Client" class="w-10 h-10 rounded-full">
-          <div class="text-left">
-            <p class="font-semibold text-gray-800">Galih Permana</p>
-            <p class="text-sm text-gray-500">Fotografer</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ulasan 4 -->
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="text-gray-600 italic mb-4">“Sangat puas dengan hasil servisnya. Laptop saya kini tidak cepat panas lagi.”</p>
-        <div class="flex items-center justify-center space-x-3">
-          <img src="https://i.pravatar.cc/40?img=14" alt="Client" class="w-10 h-10 rounded-full">
-          <div class="text-left">
-            <p class="font-semibold text-gray-800">Yulia Safitri</p>
-            <p class="text-sm text-gray-500">Pegawai Bank</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ulasan 5 -->
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="text-gray-600 italic mb-4">“Blitz Tech selalu jadi andalan saya kalau laptop bermasalah. Servis cepat dan harga jujur.”</p>
-        <div class="flex items-center justify-center space-x-3">
-          <img src="https://i.pravatar.cc/40?img=15" alt="Client" class="w-10 h-10 rounded-full">
-          <div class="text-left">
-            <p class="font-semibold text-gray-800">Wahyu Nugroho</p>
-            <p class="text-sm text-gray-500">Desainer Grafis</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Ulasan 6 -->
-      <div class="bg-gray-50 p-6 rounded-xl shadow hover:shadow-md transition">
-        <p class="text-gray-600 italic mb-4">“Sudah dua kali servis di Blitz Tech, selalu puas dengan hasil dan pelayanannya. Highly recommended!”</p>
-        <div class="flex items-center justify-center space-x-3">
-          <img src="https://i.pravatar.cc/40?img=16" alt="Client" class="w-10 h-10 rounded-full">
-          <div class="text-left">
-            <p class="font-semibold text-gray-800">Dian Ayu Lestari</p>
-            <p class="text-sm text-gray-500">Owner Online Shop</p>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
+
 
 
 
